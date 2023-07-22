@@ -4,9 +4,9 @@ This is a minimal example for using Bazel to build Python libraries that depends
 
 Working as of 2023-07-22 and using
 
-- rules_python: 0.24.0 (defined in WORKPLACE)
-- rules_rust: 0.25.1 (defined in WORKPLACE)
-- pyo3: 0.19.1 (defined in number_cruncher/Cargo.toml)
+- [rules_python](https://github.com/bazelbuild/rules_python/): 0.24.0 (defined in WORKPLACE)
+- [rules_rust](https://github.com/bazelbuild/rules_rust): 0.25.1 (defined in WORKPLACE)
+- [pyo3](https://pyo3.rs/v0.19.1/): 0.19.1 (defined in number_cruncher/Cargo.toml)
 
 ## Disclaimer:
 
