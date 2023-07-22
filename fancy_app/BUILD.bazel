@@ -1,0 +1,10 @@
+load("@pypi//:requirements.bzl", "requirement")
+
+py_binary(
+    name = "fancy_app",
+    srcs = ["app.py"],
+    main = "app.py",
+    deps = [
+        "//number_cruncher",
+    ],
+)

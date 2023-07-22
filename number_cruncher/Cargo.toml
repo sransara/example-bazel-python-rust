@@ -1,0 +1,9 @@
+[package]
+name = "number_cruncher"
+version = "0.1.0"
+
+[lib]
+path = "fib_faster.rs"
+
+[dependencies]
+pyo3 = { version = "0.19.1", features = ["extension-module"] }

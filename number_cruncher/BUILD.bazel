@@ -1,0 +1,27 @@
+load("@crate_index//:defs.bzl", "all_crate_deps")
+load("@bazel_skylib//rules:copy_file.bzl", "copy_file")
+load("@rules_rust//rust:defs.bzl", "rust_shared_library")
+load("@pypi//:requirements.bzl", "requirement")
+
+rust_shared_library(
+    name = "fib_faster_rs",
+    srcs = ["fib_faster.rs"],
+    visibility = ["//visibility:private"],
+    deps = all_crate_deps(
+        normal = True,
+        proc_macro = True,
+    ),
+)
+
+copy_file(
+    name = "fib_faster_so",
+    src = ":fib_faster_rs",
+    out = "fib_faster.so",
+)
+
+py_library(
+    name = "number_cruncher",
+    srcs = ["fib.py"],
+    data = ["fib_faster_so"],
+    visibility = ["//visibility:public"],
+)
