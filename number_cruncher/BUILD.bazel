@@ -1,7 +1,6 @@
 load("@crate_index//:defs.bzl", "all_crate_deps")
 load("@bazel_skylib//rules:copy_file.bzl", "copy_file")
 load("@rules_rust//rust:defs.bzl", "rust_shared_library")
-load("@pypi//:requirements.bzl", "requirement")
 
 rust_shared_library(
     name = "fib_native_rs",
