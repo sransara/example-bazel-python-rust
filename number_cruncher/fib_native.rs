@@ -10,7 +10,7 @@ fn fib(x: usize) -> usize {
 }
 
 #[pymodule]
-fn fib_faster(_py: Python<'_>, m: &PyModule) -> PyResult<()> {
+fn fib_native(_py: Python<'_>, m: &PyModule) -> PyResult<()> {
     m.add_function(wrap_pyfunction!(fib, m)?)?;
     Ok(())
 }

@@ -1,5 +1,5 @@
 {
-  "checksum": "1e7ca0bfab796527f93ba9c35c57d9b29c60286d6feb335a86e752a1a63725c6",
+  "checksum": "0c0a9ab956a72e2e033f6b734a2569461cdf378787ace4996e8ae767ab74d0e4",
   "crates": {
     "autocfg 1.1.0": {
       "name": "autocfg",
@@ -330,7 +330,7 @@
         {
           "Library": {
             "crate_name": "number_cruncher",
-            "crate_root": "fib_faster.rs",
+            "crate_root": "fib_native.rs",
             "srcs": [
               "**/*.rs"
             ]
