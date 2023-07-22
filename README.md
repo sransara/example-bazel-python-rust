@@ -2,6 +2,12 @@
 
 This is a minimal example for using Bazel to build Python libraries that depends on Rust (PyO3) based modules.
 
+Working as of 2023-07-22 and using
+
+- rules_python: 0.24.0 (defined in WORKPLACE)
+- rules_rust: 0.25.1 (defined in WORKPLACE)
+- pyo3: 0.19.1 (defined in number_cruncher/Cargo.toml)
+
 ## Disclaimer:
 
 This example is made for Unix systems and doesn't work with Windows.
@@ -51,3 +57,8 @@ bazel run @rules_rust//tools/rust_analyzer:gen_rust_project
 # Update any pip requirements
 bazel run //:requirements.update
 ```
+
+## Further improvements for actual usage
+
+- Make a macro out of the rules in number_cruncher/BUILD.bazel
+- Add Windows support if it is needed for your use case
