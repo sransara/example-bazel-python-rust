@@ -21,6 +21,10 @@ copy_file(
 py_library(
     name = "number_cruncher",
     srcs = ["fib.py"],
-    data = ["fib_native_so"],
+    data = [
+        "fib_native.pyi",
+        "fib_native_so",
+        "py.typed",
+    ],
     visibility = ["//visibility:public"],
 )
