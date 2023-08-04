@@ -1,5 +1,5 @@
 {
-  "checksum": "0c0a9ab956a72e2e033f6b734a2569461cdf378787ace4996e8ae767ab74d0e4",
+  "checksum": "76ef94e5a78d9234afcad16a6cd8e02152eea78f3a4d36a07f2ce7f50db00448",
   "crates": {
     "autocfg 1.1.0": {
       "name": "autocfg",
@@ -769,6 +769,18 @@
               "id": "target-lexicon 0.12.10",
               "target": "target_lexicon"
             }
+          ],
+          "selects": {}
+        },
+        "build_script_env": {
+          "common": {
+            "PYO3_PYTHON": "$(location @python3//:python3)"
+          },
+          "selects": {}
+        },
+        "tools": {
+          "common": [
+            "@python3//:python3"
           ],
           "selects": {}
         }

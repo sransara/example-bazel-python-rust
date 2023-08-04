@@ -50,11 +50,22 @@ rules_rust_dependencies()
 
 rust_register_toolchains(edition = "2021")
 
-load("@rules_rust//crate_universe:defs.bzl", "crates_repository")
+load("@rules_rust//crate_universe:defs.bzl", "crate", "crates_repository")
 
 # CARGO_BAZEL_REPIN=1 bazel sync --only=crate_index
 crates_repository(
     name = "crate_index",
+    annotations = {
+        "pyo3-build-config": [
+            crate.annotation(
+                # https://pyo3.rs/v0.19.2/building_and_distribution#configuring-the-python-version
+                build_script_env = {
+                    "PYO3_PYTHON": "$(location @python3//:python3)",
+                },
+                build_script_tools = ["@python3//:python3"],
+            ),
+        ],
+    },
     cargo_lockfile = "//:cargo.bazel.lock",
     lockfile = "//:cargo.bazel.lock.json",
     manifests = ["//number_cruncher:Cargo.toml"],
